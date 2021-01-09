@@ -22,9 +22,12 @@ public final class ReactionLoader {
     public ReactionLoader(final ReactionPlugin plugin) {
         this.plugin = plugin;
         this.logger = plugin.getLogger();
+
+        loadReactionsFromDirectory();
     }
 
-    public void loadReactionsFromDirectory() {
+    @SuppressWarnings("ResultOfMethodCallIgnored")
+    private void loadReactionsFromDirectory() {
         final File directory = new File(plugin.getDataFolder() + "/reactions");
 
         if (!directory.exists())
@@ -52,8 +55,11 @@ public final class ReactionLoader {
                 continue;
             }
 
-            reactions.add(new ReactionHolder(type, configuration));
+            reactions.add(new ReactionHolder(plugin, type, configuration));
         }
     }
 
+    public Set<ReactionHolder> getLoadedReactions() {
+        return this.reactions;
+    }
 }
