@@ -1,0 +1,15 @@
+reaction-type: WORD
+
+settings:
+  timer:
+    interval-timer: 750
+
+entries:
+  entry-type: WORD
+  entry-selection: ORDERED # RANDOM
+  contents:
+    - "Test"
+    - "Test 2"
+
+rewards:
+  - "[MESSAGE] "

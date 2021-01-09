@@ -1,0 +1,5 @@
+name: ChatReaction
+version: @version@
+main: tech.op65n.chatreaction.ReactionPlugin
+api-version: 1.13
+author: Frcsty

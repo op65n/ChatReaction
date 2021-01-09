@@ -1,0 +1,13 @@
+reaction-type: MATH
+
+settings:
+  timer:
+    max-boundary: 500
+    min-boundary: 200
+
+entries:
+  entry-type: MATH
+
+rewards:
+  - "[MESSAGE] You won blablabla"
+

@@ -1,0 +1,13 @@
+reaction-type: SCRAMBLE
+
+settings:
+  timer:
+    interval-timer: 500
+
+entries:
+  entry-type: WORD
+  entry-selection: RANDOM # ORDERED
+  contents-file: "/words/scramble-words.yml"
+
+rewards:
+  - "[MESSAGE] You won blablabla"
