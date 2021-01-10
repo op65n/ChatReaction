@@ -1,4 +1,5 @@
 reaction-type: SCRAMBLE
+reaction-identifier: "Scramble"
 
 settings:
   timer:
@@ -9,5 +10,5 @@ entries:
   entry-selection: RANDOM # ORDERED
   contents-file: "/words/scramble-words.yml"
 
-rewards:
+reward:
   - "[MESSAGE] You won blablabla"

@@ -1,10 +1,10 @@
-package tech.op65n.chatreaction.loader;
+package tech.op65n.chatreaction.reaction.loader;
 
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import tech.op65n.chatreaction.ReactionPlugin;
-import tech.op65n.chatreaction.loader.holder.ReactionHolder;
-import tech.op65n.chatreaction.type.ReactionType;
+import tech.op65n.chatreaction.reaction.loader.holder.ReactionHolder;
+import tech.op65n.chatreaction.reaction.type.ReactionType;
 
 import java.io.File;
 import java.util.HashSet;

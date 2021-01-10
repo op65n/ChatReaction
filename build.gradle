@@ -1,34 +1,38 @@
 import org.apache.tools.ant.filters.ReplaceTokens
 
 plugins {
-	id "com.github.johnrengelman.shadow" version "6.0.0"
-	id "java"
+    id "com.github.johnrengelman.shadow" version "6.0.0"
+    id "java"
 }
 
 group = "tech.op65n.chatreaction"
 version = "1.0.0-Alpha"
 
 repositories {
-	mavenCentral()
-	mavenLocal()
-	maven { url "https://repo.destroystokyo.com/repository/maven-public/" }
-	maven { url "https://oss.sonatype.org/content/groups/public/" }
+    mavenCentral()
+    mavenLocal()
+    maven { url "https://repo.destroystokyo.com/repository/maven-public/" }
+    maven { url "https://oss.sonatype.org/content/groups/public/" }
 }
 
 dependencies {
-	implementation "com.github.frcsty:FrozenAction:1.0.6"
+    implementation "com.github.frcsty:FrozenActions:1.0.6"
+    implementation "me.mattstudios.utils:matt-framework:1.4"
 
-	compileOnly "com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT"
+    compileOnly "com.destroystokyo.paper:paper-api:1.16.4-R0.1-SNAPSHOT"
 }
 
 shadowJar {
-	minimize()
+    minimize()
 
-	archiveFileName.set("ChatReaction-${project.version}.jar")
+    relocate "com.github.frcsty.frozenactions", "${group}.actions"
+    relocate "me.mattstudios.mf", "${group}.commands"
+
+    archiveFileName.set("ChatReaction-${project.version}.jar")
 }
 
 processResources {
-	from(sourceSets.main.resources.srcDirs) {
-		filter ReplaceTokens, tokens: [version: version]
-	}
+    from(sourceSets.main.resources.srcDirs) {
+        filter ReplaceTokens, tokens: [version: version]
+    }
 }

@@ -1,4 +1,4 @@
-package tech.op65n.chatreaction.type;
+package tech.op65n.chatreaction.reaction.type;
 
 public enum ReactionType {
 

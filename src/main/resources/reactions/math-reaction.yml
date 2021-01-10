@@ -1,4 +1,5 @@
 reaction-type: MATH
+reaction-identifier: "Math"
 
 settings:
   timer:
@@ -8,6 +9,6 @@ settings:
 entries:
   entry-type: MATH
 
-rewards:
+reward:
   - "[MESSAGE] You won blablabla"
 

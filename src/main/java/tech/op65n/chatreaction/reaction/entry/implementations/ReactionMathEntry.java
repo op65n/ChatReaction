@@ -1,7 +1,7 @@
-package tech.op65n.chatreaction.entry.implementations;
+package tech.op65n.chatreaction.reaction.entry.implementations;
 
 import org.bukkit.configuration.ConfigurationSection;
-import tech.op65n.chatreaction.entry.ReactionEntryType;
+import tech.op65n.chatreaction.reaction.entry.ReactionEntryType;
 
 public final class ReactionMathEntry implements ReactionEntryType {
 

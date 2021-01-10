@@ -1,12 +1,11 @@
-package tech.op65n.chatreaction.runnable;
+package tech.op65n.chatreaction.reaction.runnable;
 
 import org.bukkit.Bukkit;
 import tech.op65n.chatreaction.ReactionPlugin;
-import tech.op65n.chatreaction.entry.ReactionEntryType;
-import tech.op65n.chatreaction.interval.ReactionInterval;
-import tech.op65n.chatreaction.loader.ReactionLoader;
-import tech.op65n.chatreaction.loader.holder.ReactionHolder;
-import tech.op65n.chatreaction.type.Reaction;
+import tech.op65n.chatreaction.reaction.entry.ReactionEntryType;
+import tech.op65n.chatreaction.reaction.interval.ReactionInterval;
+import tech.op65n.chatreaction.reaction.loader.ReactionLoader;
+import tech.op65n.chatreaction.reaction.loader.holder.ReactionHolder;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -33,7 +32,6 @@ public final class RunnableRegistry {
         final Set<ReactionHolder> reactions = reactionLoader.getLoadedReactions();
 
         for (final ReactionHolder reactionHolder : reactions) {
-
             final ReactionEntryType entryType = reactionHolder.getReactionEntryType();
             final ReactionInterval reactionInterval = reactionHolder.getReactionInterval();
 
@@ -52,11 +50,34 @@ public final class RunnableRegistry {
     }
 
     private void scheduleTask(final ReactionHolder holder, final ReactionInterval interval, final ReactionEntryType entryType) {
-        this.activeReactionEntries.put(entryType.getCurrentEntry(), holder);
+        final String reactionEntry = entryType.getCurrentEntry();
+        this.activeReactionEntries.put(reactionEntry, holder);
 
         Bukkit.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
+            if (getReactionHolderByEntry(reactionEntry) == null) {
+                return;
+            }
 
+
+
+            removeReactionHolderByEntry(reactionEntry);
         }, interval.getInterval());
+    }
+
+    public ReactionHolder getReactionHolderByEntry(final String entry) {
+        return this.activeReactionEntries.get(entry);
+    }
+
+    public void removeReactionHolderByEntry(final String entry) {
+        this.activeReactionEntries.remove(entry);
+    }
+
+    public Map<String, ReactionHolder> getActiveReactionEntries() {
+        return this.activeReactionEntries;
+    }
+
+    public Set<ReactionHolder> getLoadedReactions() {
+        return this.reactionLoader.getLoadedReactions();
     }
 
 }

@@ -1,4 +1,4 @@
-package tech.op65n.chatreaction.entry;
+package tech.op65n.chatreaction.reaction.entry;
 
 public interface ReactionEntryType {
 

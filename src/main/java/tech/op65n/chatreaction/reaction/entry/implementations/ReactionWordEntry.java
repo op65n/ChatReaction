@@ -1,10 +1,10 @@
-package tech.op65n.chatreaction.entry.implementations;
+package tech.op65n.chatreaction.reaction.entry.implementations;
 
 import org.bukkit.configuration.ConfigurationSection;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import tech.op65n.chatreaction.ReactionPlugin;
-import tech.op65n.chatreaction.entry.ReactionEntryType;
+import tech.op65n.chatreaction.reaction.entry.ReactionEntryType;
 
 import java.io.File;
 import java.util.ArrayList;

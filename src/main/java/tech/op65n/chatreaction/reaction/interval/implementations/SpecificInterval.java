@@ -1,7 +1,7 @@
-package tech.op65n.chatreaction.interval.implementations;
+package tech.op65n.chatreaction.reaction.interval.implementations;
 
 import org.bukkit.configuration.ConfigurationSection;
-import tech.op65n.chatreaction.interval.ReactionInterval;
+import tech.op65n.chatreaction.reaction.interval.ReactionInterval;
 
 public final class SpecificInterval implements ReactionInterval {
 

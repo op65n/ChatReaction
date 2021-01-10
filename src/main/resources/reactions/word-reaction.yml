@@ -1,4 +1,5 @@
 reaction-type: WORD
+reaction-identifier: "Word"
 
 settings:
   timer:
